@@ -1,0 +1,22 @@
+# Backend dependencies
+backend/node_modules
+
+# Frontend dependencies
+frontend/node_modules
+
+# Environment files
+.env
+.env.example
+frontend/.env
+backend/.env.example
+
+# Compiled output
+backend/out
+
+# System files
+.DS_Store
+
+# Miscellaneous logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
