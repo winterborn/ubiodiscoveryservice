@@ -1,0 +1,39 @@
+{
+  "name": "ubiodiscoveryservice",
+  "version": "1.0.0",
+  "description": "ubio discovery service",
+  "main": "out/bin/serve.js",
+  "type": "module",
+  "scripts": {
+    "start": "node out/bin/serve",
+    "dev": "npm run clean && tsc -w",
+    "lint": "eslint --ext=.js,.ts --cache .",
+    "clean": "rm -rf out",
+    "compile": "npm run clean && tsc",
+    "build": "tsc",
+    "test": "npm run compile && NODE_ENV=test mocha \"out/test/**/*.test.js\"",
+    "docs": "npm run docs:openapi && npm run docs:api",
+    "docs:openapi": "generate-openapi > openapi.json",
+    "docs:api": "generate-docs > API.md",
+    "preversion": "npm run lint && npm run compile",
+    "version": "npm run docs && git add openapi.json API.md",
+    "postversion": "git push origin $(git rev-parse --abbrev-ref HEAD) --tags"
+  },
+  "author": "pwhite",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "^2.15.0",
+    "@ubio/framework": "^15.11.1",
+    "dotenv": "^16.4.5",
+    "koa": "^2.15.3",
+    "mesh-ioc": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.9",
+    "@types/sinon": "^17.0.3",
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2",
+    "sinon": "^19.0.2"
+  }
+}
