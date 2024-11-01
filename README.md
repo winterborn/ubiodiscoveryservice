@@ -141,8 +141,6 @@ As part of this project, I have documented my planning, design choices and refle
 
 For a more comprehensive view, you can access the full version of the planning and design on my [Miro Board](https://miro.com/app/board/uXjVLMgEvtQ=/).
 
-You can view the planning and initial design documentation on my Miro Board: https://miro.com/app/board/uXjVLMgEvtQ=/
-
 ## Acknowledgments
 
 Special thanks for the contributions and inspiration behind the design from Ubio.
