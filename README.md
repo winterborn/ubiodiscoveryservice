@@ -122,6 +122,7 @@ Other supported endpoints include /test, /instances, /metrics and specific reque
 To simulate heartbeat requests for monitoring purposes, you can send POST requests to create or update a group and instance. This will allow you to monitor instance statuses through the backend terminal logs and / or the frontend dashboard.
 
 Backend Terminal: You should see logs indicating the receipt of heartbeat requests and updates to instance statuses where relevant, you should also see the cleanup process work to remove expired instances periodically.
+
 Frontend Dashboard: The dashboard will display some light metrics based on data through the service, updating based on the polling interval configured.
 
 ## Tests
