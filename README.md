@@ -2,7 +2,7 @@
 
 ### Welcome to Ubio Discovery Service!
 
-This is a web application consisting of a backend built with Node.js and TypeScript and a frontend built with React and TypeScript. The service monitors client applications by tracking their heartbeats and managing their instance statuses. Below are the instructions for setting up and running the app on your local machine.
+This is a web application consisting of a backend built with Node.js and TypeScript and a frontend built with React. The service monitors client applications by tracking their heartbeats and managing their instance statuses. Below are the instructions for setting up and running the app on your local machine.
 
 ## Getting Started
 
@@ -30,7 +30,7 @@ npm install
 
 Configure environment variables:
 
-Open .env.example and update the values as needed. For example:
+Open `.env.example` and update the values as needed. For example:
 
 ```
 # Expiration Age:
@@ -46,8 +46,8 @@ EXPIRATION_AGE=120000
 CLEANUP_INTERVAL=30000
 ```
 
-Configure EXPIRATION_AGE and CLEANUP_INTERVAL in the environment settings to control how frequently the service cleans up expired instances.
-If not set, the backend service will use default values of EXPIRATION_AGE=30000 and CLEANUP_INTERVAL=10000; this was used to see rapid output during prototyping.
+Configure `EXPIRATION_AGE` and `CLEANUP_INTERVAL` in the environment settings to control how frequently the service cleans up expired instances.
+If not set, the backend service will use default values of `EXPIRATION_AGE=30000` and `CLEANUP_INTERVAL=10000`; this was used to see rapid output during prototyping.
 
 Compile and start the backend server:
 
@@ -77,7 +77,7 @@ npm install
 
 Configure environment variables:
 
-Update REACT_APP_POLLING_INTERVAL=10000 in the .env file to your preferred polling interval. This has a default value of REACT_APP_POLLING_INTERVAL=10000 if none is provided.
+Update `REACT_APP_POLLING_INTERVAL=10000` in the `.env` file to your preferred polling interval. This has a default value of `REACT_APP_POLLING_INTERVAL=10000` if none is provided.
 
 ```
 # Recommended Polling Intervals:
@@ -93,7 +93,7 @@ Start the frontend server (after the backend is running):
 npm start
 ```
 
-The frontend will be accessible at http://localhost:3000 and should automatically open in your default browser.
+The frontend will be accessible at `http://localhost:3000` and should automatically open in your default browser.
 
 ## API Requests
 
@@ -115,7 +115,7 @@ The frontend will be accessible at http://localhost:3000 and should automaticall
 
   ```
 
-Other supported endpoints include /test, /instances, /metrics and specific requests for groups and instances.
+Other supported endpoints include `/test`, `/instances`, `/metrics` and specific requests for groups and instances.
 
 ## Sending Simulated Heartbeat Requests
 
@@ -136,6 +136,10 @@ npm test
 ```
 
 ## Planning and Documentation
+
+As part of this project, I have documented my planning, design choices and reflections in a PDF located in the `planning` folder. This document provides insight into the thought process and decisions made during the development of this service.
+
+For a more comprehensive view, you can access the full version of the planning and design on my [Miro Board](https://miro.com/app/board/uXjVLMgEvtQ=/).
 
 You can view the planning and initial design documentation on my Miro Board: https://miro.com/app/board/uXjVLMgEvtQ=/
 
