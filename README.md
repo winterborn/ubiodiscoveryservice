@@ -18,6 +18,8 @@ Clone this repository to your local machine using the following command:
 git clone git@github.com:winterborn/ubiodiscoveryservice.git
 ```
 
+## Backend Setup
+
 Navigate to the backend folder:
 
 Install the backend dependencies:
@@ -32,20 +34,20 @@ Open .env.example and update the values as needed. For example:
 
 ```
 # Expiration Age:
-# 30 seconds: The default time in milliseconds after which an instance is considered expired if no heartbeat is received.
+# 120 seconds: The default time in milliseconds after which an instance is considered expired if no heartbeat is received.
 # Adjust based on how frequently instances are expected to send updates.
 # Lower values may be more suitable for services that require close monitoring of instance activity.
-EXPIRATION_AGE=30000
+EXPIRATION_AGE=120000
 
 # Cleanup Interval:
-# 10 seconds: The frequency in milliseconds at which expired instances are removed from the system.
+# 30 seconds: The frequency in milliseconds at which expired instances are removed from the system.
 # Lower intervals result in more frequent cleanup, which can help keep the system lean.
 # Higher intervals may be better suited for systems where expired instances do not need immediate removal.
-CLEANUP_INTERVAL=10000
+CLEANUP_INTERVAL=30000
 ```
 
 Configure EXPIRATION_AGE and CLEANUP_INTERVAL in the environment settings to control how frequently the service cleans up expired instances.
-If not set, the backend service will use default values of EXPIRATION_AGE=30000 and CLEANUP_INTERVAL=10000.
+If not set, the backend service will use default values of EXPIRATION_AGE=30000 and CLEANUP_INTERVAL=10000; this was used to see rapid output during prototyping.
 
 Compile and start the backend server:
 
@@ -62,6 +64,8 @@ npm run start
 ```
 
 The backend service should now be running.
+
+## Frontend Setup
 
 In a separate terminal window, navigate to the frontend folder:
 
@@ -113,6 +117,13 @@ The frontend will be accessible at http://localhost:3000 and should automaticall
 
 Other supported endpoints include /test, /instances, /metrics and specific requests for groups and instances.
 
+## Sending Simulated Heartbeat Requests
+
+To simulate heartbeat requests for monitoring purposes, you can send POST requests to create or update a group and instance. This will allow you to monitor instance statuses through the backend terminal logs and / or the frontend dashboard.
+
+Backend Terminal: You should see logs indicating the receipt of heartbeat requests and updates to instance statuses where relevant, you should also see the cleanup process work to remove expired instances periodically.
+Frontend Dashboard: The dashboard will display some light metrics based on data through the service, updating based on the polling interval configured.
+
 ## Tests
 
 To run tests for the backend, navigate to the backend folder and execute the following command:
@@ -122,6 +133,10 @@ To run tests for the backend, navigate to the backend folder and execute the fol
 npm test
 
 ```
+
+## Planning and Documentation
+
+You can view the planning and initial design documentation on my Miro Board: https://miro.com/app/board/uXjVLMgEvtQ=/
 
 ## Acknowledgments
 
